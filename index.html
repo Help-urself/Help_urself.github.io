@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Help_urself</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .g{
+            color:white
+        }
+        body{
+            background-color: black;
+        }
+    p, h1 {
+        font-size: 2.6em;
+        color: rgb(241, 20, 20);
+    }
+    </style>
+  
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+     
+      <script>
+     
+    /* Add "https://api.ipify.org?format=json" statement
+               this will communicate with the ipify servers in
+               order to retrieve the IP address $.getJSON will
+               load JSON-encoded data from the server using a
+               GET HTTP request */
+                
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+         
+        // Setting text of element P with id gfg
+        $("#gfg").html('Твое ip : '+data.ip);
+        var l = document.getElementById('#j');
+        $("#j").html('<h1>Я знаю все..</h>');
+        $.getJSON('https://ipapi.co/'+data.ip+'/json', function(data){
+        $('#ss').text('Твой город :' + data.city);
+
+    })
+
+
+    })
+    </script>
+</head>
+ 
+<body>
+    <center>
+        <h3><a class="g" id="j"></a></h3>
+        <p id="gfg"></p>
+        <p id="ss"></p>
+ 
+    </center>
+</body>
+ 
+</html>
